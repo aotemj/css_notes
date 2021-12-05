@@ -16,6 +16,7 @@
     row-gap: 10px;
     column-gap: 20px;
     gap: 20px 30px;
+    justify-items: center;
 }
 
 .container > .item {
