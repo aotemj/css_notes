@@ -1,0 +1,12 @@
+.container {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    border: 1px solid blue;
+    grid-template-columns: 30px 30px 30px;
+    grid-template-rows: 30px 30px 30px;
+}
+
+.container >.item{
+    border: 1px solid red;
+}
