@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, html {
+            font-size: 30px;
+        }
+
+        div {
+            border: 1px solid blue;
+            width: auto;
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .parent {
+            font-size: 80%;
+            border: 1px solid red;
+        }
+
+        .child-1 {
+            font-size: 60%;
+        }
+
+        .sub-child {
+            font-size: 60%;
+        }
+
+        .child-2 {
+            font-size: 2em;
+        }
+
+        .sub-child2 {
+            font-size: 2em;
+        }
+
+        .child-3 {
+            font-size: 2rem;
+        }
+
+        .sub-child3 {
+            font-size: 2rem;
+        }
+
+        .child4 {
+            font-size: 2rem;
+        }
+
+        .child5 {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<!--
+font-size属性不被直接继承：只有计算值被继承，而不是整个声明被继承。
+当使用一个绝对字体大小值（如14px）时表现不明显，但是使用相对字体大小值（如80%或0.8em）时就表现非常明显。相对值只有被传递到子元素之前，才会被计算。
+如果我们在<div>元素上设置一个相对的font-size，它仅被传递到子元素，而不是所有后代。
+字体大小计算时有很奇怪的边缘效果。例如：我们对一个<div>元素使用80%的相对字体大小，其他嵌套在<div>元素中的元素同时也会继承该大小这意味着其他元素的字体大小将是80%乘以80%，及64%。
+ -->
+<!--
+● %: 继承父元素字体的 %值, eg: 父元素 font-size: 10px. 子元素: font-size: 150%, 则子元素的实际字体大小为: 10px * 150% = 150px;
+● em: 继承父元素字体的em 倍的值 ,eg:  父元素 font-size: 10px, 子元素: font-size: 2em, 则子元素的实际字体大小为: 2* 10px = 20px;
+● rem: 继承跟元素的字体大小: eg: body 的 font-size: 20px, 子元素: font-size: 2rem, 则子元素的时间字体大小为: 20px * 2 = 40px;
+-->
+<div class="parent">
+    parent
+    <div class="child-1">
+        child1
+        <div class="sub-child">subChild</div>
+    </div>
+    <div class="child-2">child2
+        <div class="sub-child2">sub-Child2</div>
+    </div>
+    <div class="child-3">child3
+        <div class="sub-child3">sub-Child3</div>
+    </div>
+</div>
+
+<div class="child4">child4</div>
+<div class="child5">child5</div>
+</body>
+</html>
